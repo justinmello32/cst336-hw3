@@ -1,3 +1,27 @@
+#info-section {
+	margin-bottom: 5rem;
+}
+
 body {
-	color: black;
+	background-color: #118ab2;
+	color: white;
+	font-size: 16px;
+}
+
+img {
+	border-radius: 50%;
+}
+
+button {
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+}
+
+.btn-primary {
+	background-color:  #06d6a0;
+}
+
+footer {
+	margin-top: 5rem;
+	font-size: 14px;
 }

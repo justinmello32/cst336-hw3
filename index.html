@@ -10,26 +10,38 @@
 
 <body>
 	<div class="container">
-	<h1 class="text-center">Rick and Morty Character Search</h1>
-    <input id ="characterID" type="text" class="form-control" name="characterID" placeholder="Enter character name">
+    <div id="info-section">
+    	<h1 class="text-center">Rick and Morty Character Search</h1>
+        <p class="text-center">Enter a charcter ID to search character info, 1-627.
+    </div>
+    <input id ="characterID" type="number" class="form-control" name="characterID" placeholder="Enter character ID">
     <div class="row">
         <div class="col text-center">
             <button id="submit" class="btn btn-primary">Search</button>
         </div>
     </div>
-    <img src="" class="img-fluid" id="characterImage"><br>
-    <span id="characterName"></span><br>
-    <span id="characterGender"></span><br>
-    <span id="characterStatus"></span><br>
-    <span id="characterSpecies"></span><br>
-    <span id="characterOrigin"></span><br>
+
+    <div class="row">
+        <div class="col-3 mx-auto text-center">
+            <img src="" class="img-fluid" id="characterImage"><br>
+            <span id="characterName"></span><br>
+            <span id="characterGender"></span><br>
+            <span id="characterStatus"></span><br>
+            <span id="characterSpecies"></span><br>
+            <span id="characterOrigin"></span><br>
+        </div>
+    </div>
 
     </div>
 
-    <footer>
-        <p>CST 336 Lab3 - Justin Mello
+    <footer class="text-center">
+        <p>CST 336 HW3 - Justin Mello
     </footer>
     <script>
+
+
+
+
 
         //let url = `https://rickandmortyapi.com/api/character`;
         //let response = await fetch(url);
@@ -38,6 +50,12 @@
 
 
             $("#submit").on("click", async function() {
+
+            if($("#characterID").val().length == 0 || $("#characterID").val() > 627) {
+                alert("You didnt enter a valid number, try again!");
+                die();
+            } 
+
             // alert("Submitting form");
             let characterID = $("#characterID").val();
             let url = `https://rickandmortyapi.com/api/character/${characterID}`;
